@@ -37,12 +37,8 @@ def load_sample(n_patients: int = 600, random_state: int = 42) -> pd.DataFrame:
     df = pd.read_csv(DATA_PATH, dtype={"Patient_ID": str})
     df = df.drop(columns=["Unnamed: 0"], errors="ignore")
 
-    # Determine per-patient sepsis status (skip if already present)
-    if "is_sepsis" not in df.columns:
-        sepsis_patients = (
-            df.groupby("Patient_ID")[LABEL_COL].max().rename("is_sepsis")
-        )
-        df = df.join(sepsis_patients, on="Patient_ID")
+    # Determine per-patient sepsis status
+    df["is_sepsis"] = df.groupby("Patient_ID")[LABEL_COL].transform("max")
 
     # If using the bundled sample file, skip re-sampling (already 600 patients)
     n_unique = df["Patient_ID"].nunique()
