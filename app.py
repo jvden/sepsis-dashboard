@@ -545,9 +545,9 @@ with tab4:
     - Lactaat > 2.0 mmol/L
     - WBC < 4 of > 12 ×10³/µL
 
-    **Bewuste keuze**: een transparant regelgebaseerd model i.p.v. black-box ML,
-    omdat verklaringsplichtigheid vereist is onder de **EU AI Act** (art. 13) en
-    klinisch personeel de score per indicator moet kunnen begrijpen.
+    **Bewuste keuze**: een transparant regelgebaseerd model in plaats van een model
+    dat zijn redenering verbergt, omdat de **EU AI Act** (art. 13) uitlegbaarheid
+    verplicht en klinisch personeel de score per indicator moet kunnen begrijpen.
 
     ## Juridische context
     - **AVG (GDPR)**: Patiëntgegevens worden alleen lokaal verwerkt; geen export naar derde partijen.
@@ -563,9 +563,9 @@ with tab4:
     Gebruik van de data is gelicenseerd onder PhysioNet Open Data Commons.
 
     ## Aanbevelingen voor implementatie bij Isala
-    1. Integratie met het EPD (HiX) via HL7 FHIR API voor real-time datakoppeling.
-    2. Uitbreiding met lokale Isala-data voor kalibratie op de populatie.
-    3. Prospectieve validatie: minimaal 3 maanden schaduwdraaien vóór klinisch gebruik.
-    4. Jaarlijkse hervalidatie conform EU AI Act post-market surveillance.
-    5. Training voor IC-medewerkers: omgang met false positives en interpretatie scores.
+    1. Koppeling met het patiëntensysteem (HiX) van Isala voor live data per patiënt.
+    2. Aanvullen met Isala-eigen data zodat de scores beter aansluiten op de lokale populatie.
+    3. Testperiode: minimaal 3 maanden naast het bestaande protocol draaien vóór klinisch gebruik.
+    4. Jaarlijkse hervalidatie conform de EU AI Act.
+    5. Training voor IC-medewerkers over het omgaan met onterechte alarmen en de interpretatie van scores.
     """)
