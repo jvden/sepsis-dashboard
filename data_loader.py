@@ -52,6 +52,7 @@ def load_sample(n_patients: int = 600, random_state: int = 42) -> pd.DataFrame:
     # Stratified sample: half sepsis, half non-sepsis
     half = n_patients // 2
     rng = np.random.default_rng(random_state)
+    sepsis_patients = df.groupby("Patient_ID")[LABEL_COL].max()
 
     sep_ids = sepsis_patients[sepsis_patients == 1].index.tolist()
     non_ids = sepsis_patients[sepsis_patients == 0].index.tolist()
@@ -85,10 +86,10 @@ def missing_rate(df: pd.DataFrame, cols: list[str]) -> pd.Series:
 
 
 def sepsis_onset_hour(df: pd.DataFrame) -> dict[str, int | None]:
-    """Return the first hour where SepsisLabel == 1 per patient."""
+    """Return the first ICULOS hour where SepsisLabel == 1 per patient."""
     onset = (
         df[df[LABEL_COL] == 1]
-        .groupby("Patient_ID")["Hour"]
+        .groupby("Patient_ID")["ICULOS"]
         .min()
     )
     return onset.to_dict()
