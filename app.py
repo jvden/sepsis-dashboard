@@ -529,11 +529,11 @@ with tab4:
     ## KPI's
     | KPI | Streefwaarde |
     |-----|-------------|
-    | Sensitiviteit (detectie vóór onset) | ≥ 75% |
-    | False Positive Rate | ≤ 25% |
-    | Vroeg-detectievenster | ≥ 6 uur vóór klinische diagnose |
+    | Vroeg-detectie vóór sepsis-onset | ≥ 75% |
+    | Percentage onterechte alarmen (niet-sepsispatiënten) | ≤ 25% |
+    | Mediaan detectievoordeel bij alarm vóór onset | ≥ 3 uur |
     | Paginalaadtijd | < 3 seconden |
-    | Beschikbaarheid | 24/7, 99.5% uptime |
+    | Datakwaliteit (≥4 vitale parameters beschikbaar) | ≥ 80% patiënten |
 
     ## Risicoscore — methode
     De risicoscore is gebaseerd op **qSOFA** (Quick Sequential Organ Failure Assessment)
@@ -560,7 +560,7 @@ with tab4:
 
     ## Data
     Bron: **PhysioNet/CinC Challenge 2019** — 40.336 IC-patiënten uit drie ziekenhuissystemen.
-    Gebruik van de data is gelicenseerd onder PhysioNet Open Data Commons.
+    Gebruik van de data is toegestaan onder de open-access licentievoorwaarden van PhysioNet.
 
     ## Aanbevelingen voor implementatie bij Isala
     1. Koppeling met het patiëntensysteem (HiX) van Isala voor live data per patiënt.
